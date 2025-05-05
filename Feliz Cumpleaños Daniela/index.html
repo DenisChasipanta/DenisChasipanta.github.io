@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Feliz Cumpleaños, Daniela</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Cinzel&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Cinzel', serif;
+            background: linear-gradient(to bottom, #fff0f5, #ffe6f0);
+            overflow-x: hidden;
+        }
+
+        .petal {
+            position: fixed;
+            width: 30px;
+            height: 30px;
+            top: -30px;
+            pointer-events: none;
+            opacity: 0.9;
+            z-index: 100;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(-40px) rotate(0deg);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(110vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+
+        .header {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .header h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 50px;
+            color: #e91e63;
+        }
+
+        .flower-button {
+            display: flex;
+            justify-content: center;
+            margin: 30px 0;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .flower-button img {
+            width: 120px;
+            transition: transform 0.5s ease;
+        }
+
+        .flower-button:hover img {
+            transform: scale(1.1) rotate(10deg);
+        }
+
+        .card {
+            display: none;
+            max-width: 700px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+        }
+
+        .card p {
+            font-size: 18px;
+            line-height: 1.7;
+            color: #444;
+        }
+
+        .card .from {
+            text-align: right;
+            font-family: 'Dancing Script', cursive;
+            font-size: 22px;
+            margin-top: 20px;
+        }
+
+        .gallery {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 40px auto;
+            max-width: 800px;
+        }
+
+        .gallery img {
+            width: 180px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        .reply-button {
+            display: block;
+            margin: 30px auto;
+            padding: 10px 25px;
+            font-family: 'Cinzel', serif;
+            background-color: #e91e63;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 18px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s;
+        }
+
+        .reply-button:hover {
+            background-color: #d81b60;
+        }
+
+        /* Estilos para el pastel emergente */
+        #pastel {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff0f5;
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+            z-index: 10;
+        }
+
+        #pastel img {
+            width: 200px;
+        }
+
+        #pastel h2 {
+            color: #e91e63;
+            font-family: 'Dancing Script', cursive;
+        }
+
+        #pastel button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #e91e63;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        #pastel button:hover {
+            background-color: #d81b60;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Música de fondo -->
+    <audio id="musica" loop>
+        <source src="imagenes/wwd.mp3juice.blog - ️MÚSICA DE AMOR PARA FONDOS DE VÍDEOS ROMÁNTICOS (Music Free) (320 KBps).mp3" type="audio/mp3">
+    </audio>
+
+    <!-- Pétalos -->
+    <script>
+        const petalCount = 30;
+        const petalURL = 'https://cdn-icons-png.flaticon.com/512/10085/10085271.png ';
+        const petalURL2 = 'https://cdn-icons-png.flaticon.com/512/2682/2682340.png';
+        const petalURL3 = 'https://cdn-icons-png.flaticon.com/512/3034/3034068.png'; // Flor con fondo transparente
+
+        for (let i = 0; i < petalCount; i++) {
+            const petal = document.createElement('img');
+            petal.src = petalURL;
+            petal.classList.add('petal');
+            petal.style.left = Math.random() * 100 + 'vw';
+            petal.style.animationDuration = 5 + Math.random() * 5 + 's';
+            petal.style.animationDelay = Math.random() * 5 + 's';
+            document.body.appendChild(petal);
+        }
+        for (let i = 0; i < petalCount; i++) {
+            const petal = document.createElement('img');
+            petal.src = petalURL2;
+            petal.classList.add('petal');
+            petal.style.left = Math.random() * 100 + 'vw';
+            petal.style.animationDuration = 5 + Math.random() * 5 + 's';
+            petal.style.animationDelay = Math.random() * 5 + 's';
+            document.body.appendChild(petal);
+        }
+        for (let i = 0; i < petalCount; i++) {
+            const petal = document.createElement('img');
+            petal.src = petalURL3;
+            petal.classList.add('petal');
+            petal.style.left = Math.random() * 100 + 'vw';
+            petal.style.animationDuration = 5 + Math.random() * 5 + 's';
+            petal.style.animationDelay = Math.random() * 5 + 's';
+            document.body.appendChild(petal);
+        }
+    </script>
+
+
+    <div class="header">
+        <h1>🌸 Feliz Cumpleaños, Daniela 🌸</h1>
+    </div>
+
+    <!-- Imagen de flor para abrir la carta -->
+    <div class="flower-button" onclick="mostrarCarta()">
+        <h2>Haz clic aquí para abrir la carta  👉🏻</h2>
+        <img src="https://cdn-icons-png.flaticon.com/512/4464/4464688.png"
+            alt="Flor para abrir la carta">
+    </div>
+
+    <!-- Carta de cumpleaños -->
+    <div class="card" id="carta">
+        <p class="from">
+            &emsp;Hoy el universo no solo celebra un cumpleaños… celebra tu existencia, esa que tiene el don de iluminar incluso los días más grises. Tu risa brilla más que mil estrellas, y tu manera de estar presente hace que todo sea un poco más bonito.
+        </p>
+        <p class="from">
+            &emsp;Desde que nos conocemos —y ya son varios años— he aprendido a admirar profundamente la persona que eres: auténtica, generosa, fuerte y llena de luz. No siempre digo estas cosas en voz alta, pero hoy quiero que lo sepas.
+        </p>
+        <p class="from">
+            Esta carta no busca sorprenderte con grandes palabras, sino recordarte, desde el corazón, lo mucho que significas. Ojalá tu día esté lleno de momentos que te hagan sonreír de verdad, de gente que te quiere bien, y de instantes simples que se queden contigo.
+        </p>
+        <p class="from">
+            &emsp;Deseo que hoy te rodeen sonrisas sinceras, abrazos que reconfortan y miradas que te recuerden lo valiosa que eres. Y si algún día lo dudas, por favor no olvides que hay alguien que piensa en ti con mucho cariño, sin condiciones ni expectativas, simplemente por lo especial que eres.
+
+            Con todo mi aprecio,
+            "Denis"
+        </p>
+        <p class="from">
+            Con todo cariño...<br>
+            Tu mejor amigo 💖
+        </p>
+        <button class="reply-button" onclick="mostrarPastel()">👉🏻🎂👈🏻</button>
+    </div>
+
+    <!-- Galería de imágenes -->
+    <div class="gallery">
+        <img src="imagenes/2.jpg" alt="Daniela 1">
+        <img src="imagenes/1.jpg" alt="Daniela 2">
+        <img src="imagenes/3.jpg" alt="Daniela 3">
+    </div>
+
+    <!-- Pastel de cumpleaños oculto -->
+    <div id="pastel">
+        <img src="https://cdn-icons-png.flaticon.com/512/6453/6453598.png " alt="Pastel de cumpleaños"><br><br>
+        <h2>¡Feliz cumpleaños, Dani! 🎂</h2>
+        <button onclick="cerrarPastel()">Cerrar</button>
+    </div>
+
+    <script>
+        function mostrarCarta() {
+            document.getElementById('carta').style.display = 'block';
+            window.scrollTo({ top: document.getElementById('carta').offsetTop - 50, behavior: 'smooth' });
+            // Reproducir música al mostrar la carta
+            var audio = document.getElementById("musica");
+            audio.play().catch(function (error) {
+                console.log("La reproducción automática fue bloqueada.");
+            });
+        }
+
+        function mostrarPastel() {
+            document.getElementById('pastel').style.display = 'block';
+        }
+
+        function cerrarPastel() {
+            document.getElementById('pastel').style.display = 'none';
+        }
+    </script>
+
+</body>
+
+</html>
